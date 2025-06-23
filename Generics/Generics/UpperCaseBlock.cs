@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    public class UpperCaseBlock<T> : IBlock<string> 
+    public class UpperCaseBlock : IBlock<string> 
     {
         public string Process(string input)
         {
             return input.ToUpper();
+
         }
     }
 }
