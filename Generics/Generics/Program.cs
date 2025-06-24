@@ -1,4 +1,4 @@
 ﻿using Generics;
 
-UpperCaseBlock i = new UpperCaseBlock();
+ReverseBlock i = new ReverseBlock();
 Console.WriteLine(i.Process("hello world!"));
