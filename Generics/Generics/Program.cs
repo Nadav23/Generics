@@ -1,4 +1,4 @@
 ﻿using Generics;
 
-ReverseBlock i = new ReverseBlock();
-Console.WriteLine(i.Process("hello world!"));
+ReplaceAWithSixBlock i = new ReplaceAWithSixBlock();
+Console.WriteLine(i.Process("AAa"));
