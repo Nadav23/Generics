@@ -8,15 +8,21 @@ namespace Generics
 {
     public class DataFlow<T> : IDataFlow<T> where T : class
     {
-        public List<IBlock<T>> flow;
+        public List<IBlock<T>> Flow { get; set; }
+
+        public DataFlow()
+        {
+            Flow = new List<IBlock<T>>();
+        }
+
         public T RunFlow(T input)
         {
             T output = input;
 
-            foreach (IBlock<T> block in flow)
+            foreach (IBlock<T> block in Flow)
             {
                 output = block.Process(input);
-
+                input = output;
             }
 
             return output;
@@ -25,7 +31,7 @@ namespace Generics
 
         public void AddBlock(IBlock<T> block)
         {
-            flow.Add(block);
+            Flow.Add(block);
 
         }
     }
