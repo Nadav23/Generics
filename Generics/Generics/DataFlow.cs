@@ -17,15 +17,17 @@ namespace Generics
 
         public T RunFlow(T input)
         {
-            T output = input;
+            if (input == null)
+            {
+                return null;
+            }
 
             foreach (IBlock<T> block in Flow)
             {
-                output = block.Process(input);
-                input = output;
+                 input = block.Process(input);
             }
 
-            return output;
+            return input;
 
         }
 
